@@ -12,39 +12,48 @@ namespace digital_clock
 {
     public partial class Form1 : Form
     {
-        string message;
-        DigitalClock clock = new DigitalClock();
         public Form1()
-        {
+        {         
             InitializeComponent();
-            clock.Value = "11:11";
-            this.Controls.Add(clock);
-            message = clock.Minute.ToString() + " - " + clock.Second.ToString();
         }
 
-
-       
         private void btn_Start_Click(object sender, EventArgs e)
         {
-            
+            clock.Visible = true;
+
+            int min = Convert.ToInt32(nUD_min.Value);
+            int sec = Convert.ToInt32(nUD_sec.Value);
+            clock.end = min * 60 + sec;
+            clock.Start();
+
+            clock.ReachTimeLimitEvent += CloseForm;
         }
 
         private void btn_Stop_Click(object sender, EventArgs e)
         {
-
+            clock.Stop();
         }
 
         private void btn_Pause_Click(object sender, EventArgs e)
         {
-
+            clock.Pause();
         }
 
         private void btn_Resume_Click(object sender, EventArgs e)
         {
-
+            clock.Resume();
         }
 
-      
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //clock.ReachTimeLimitEvent += CloseForm;
+        }
 
+        private void CloseForm(object sender, EventArgs e)
+        {
+            //clock.Stop();
+            clock.Visible = false;
+            //MessageBox.Show("Hello");
+        }
     }
 }

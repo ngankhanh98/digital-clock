@@ -12,17 +12,24 @@ namespace digital_clock
 {
     public partial class DigitalClock : UserControl
     {
+        public int start = 0;
+        public int resume = 0;
+        public int end = 0;
         Clock clock = new Clock(0, 0);
+        Image[] img = { Properties.Resources._0,
+                Properties.Resources._1,
+                Properties.Resources._2,
+                Properties.Resources._3,
+                Properties.Resources._4,
+                Properties.Resources._5,
+                Properties.Resources._6,
+                Properties.Resources._7,
+                Properties.Resources._8,
+                Properties.Resources._9 };
+
         public DigitalClock()
         {
             InitializeComponent();
-
-        }
-
-        // Load Digital Clock
-        private void DigitalClock_Load(object sender, EventArgs e)
-        {
-            //timer.Start();
         }
 
         // properties
@@ -63,28 +70,64 @@ namespace digital_clock
         }
 
         // event
-        public int countup = 0;
         private void timer_Tick(object sender, EventArgs e)
         {
-            countup++;
-            //num1.Image = Properties.Resources._3;
+            start++;
+            if (start < clock.MAX_min * 60 + clock.MAX_sec && start <= end)
+            {
+                clock.sec = start % 60;
+                num4.Image = img[clock.sec % 10];
+                num3.Image = img[clock.sec / 10];
+                clock.min = start / 60;
+                num2.Image = img[clock.min % 10];
+                num1.Image = img[clock.min / 10];
+            }
+            CloseDigitalClock(sender, e);
         }
 
-        private void DigitalClock_Start(object sender, EventArgs e)
+        public void Start()
         {
-            Image[] img = { Properties.Resources._0,
-                Properties.Resources._1,
-                Properties.Resources._2,
-                Properties.Resources._3,
-                Properties.Resources._4,
-                Properties.Resources._5,
-                Properties.Resources._6,
-                Properties.Resources._7,
-                Properties.Resources._8,
-                Properties.Resources._9 };
-
+            start = 0;
+            num1.Image = img[0];
+            num2.Image = img[0];
+            num3.Image = img[0];
+            num4.Image = img[0];
             timer.Start();
-            num1.Image = img[countup];
+        }
+
+        public void Stop()
+        {
+            timer.Stop();
+            start = 0;
+        }
+
+        public void Pause()
+        {
+            resume = start;
+            timer.Stop();
+            start = resume;
+        }
+
+        public void Resume()
+        {
+            if (start == 0)
+            {
+                num1.Image = img[0];
+                num2.Image = img[0];
+                num3.Image = img[0];
+                num4.Image = img[0];
+            }
+            timer.Start();
+        }
+
+        public delegate void ReachTimeLimitHandler(object sender, EventArgs e);
+        public event ReachTimeLimitHandler ReachTimeLimitEvent;
+        protected void CloseDigitalClock(object sender, EventArgs e)
+        {
+            if (ReachTimeLimitEvent != null && end < start)
+            {
+                ReachTimeLimitEvent(this, e);
+            }
         }
     }
 }

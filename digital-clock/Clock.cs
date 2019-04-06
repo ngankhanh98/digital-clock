@@ -8,6 +8,9 @@ namespace digital_clock
 {
    public class Clock
     {
+        public int MAX_min = 99;
+        public int MAX_sec = 60;
+
         public int min { get; set; }
         public int sec { get; set; }
         public string value { get; set; }

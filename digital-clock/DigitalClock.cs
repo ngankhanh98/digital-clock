@@ -14,6 +14,7 @@ namespace digital_clock
     {
         public int start = 0;
         public int resume = 0;
+        public int end = 0;
         Clock clock = new Clock(0, 0);
         Image[] img = { Properties.Resources._0,
                 Properties.Resources._1,
@@ -26,17 +27,9 @@ namespace digital_clock
                 Properties.Resources._8,
                 Properties.Resources._9 };
 
-
         public DigitalClock()
         {
             InitializeComponent();
-
-        }
-
-        // Load Digital Clock
-        private void DigitalClock_Load(object sender, EventArgs e)
-        {
-            //timer.Start();
         }
 
         // properties
@@ -77,11 +70,10 @@ namespace digital_clock
         }
 
         // event
-
         private void timer_Tick(object sender, EventArgs e)
         {
             start++;
-            if (start < clock.MAX_min * 60 + clock.MAX_sec)
+            if (start < clock.MAX_min * 60 + clock.MAX_sec && start <= end)
             {
                 clock.sec = start % 60;
                 num4.Image = img[clock.sec % 10];
@@ -90,10 +82,12 @@ namespace digital_clock
                 num2.Image = img[clock.min % 10];
                 num1.Image = img[clock.min / 10];
             }
+            CloseDigitalClock(sender, e);
         }
 
         public void Start()
         {
+            start = 0;
             num1.Image = img[0];
             num2.Image = img[0];
             num3.Image = img[0];
@@ -124,6 +118,16 @@ namespace digital_clock
                 num4.Image = img[0];
             }
             timer.Start();
+        }
+
+        public delegate void ReachTimeLimitHandler(object sender, EventArgs e);
+        public event ReachTimeLimitHandler ReachTimeLimitEvent;
+        protected void CloseDigitalClock(object sender, EventArgs e)
+        {
+            if (ReachTimeLimitEvent != null && end < start)
+            {
+                ReachTimeLimitEvent(this, e);
+            }
         }
     }
 }

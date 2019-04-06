@@ -115,7 +115,6 @@ namespace digital_clock
             this.Controls.Add(this.num1);
             this.Name = "DigitalClock";
             this.Size = new System.Drawing.Size(170, 44);
-            this.Load += new System.EventHandler(this.DigitalClock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.num1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dash)).EndInit();

@@ -19,6 +19,7 @@ namespace digital_clock
             InitializeComponent();
             clock.Value = "11:11";
             this.Controls.Add(clock);
+            
             message = clock.Minute.ToString() + " - " + clock.Second.ToString();
         }
 
@@ -26,25 +27,28 @@ namespace digital_clock
        
         private void btn_Start_Click(object sender, EventArgs e)
         {
-            
+            clock.Start();
         }
 
         private void btn_Stop_Click(object sender, EventArgs e)
         {
-
+            clock.Stop();
         }
 
         private void btn_Pause_Click(object sender, EventArgs e)
         {
-
+            clock.Pause();
         }
 
         private void btn_Resume_Click(object sender, EventArgs e)
         {
-
+            clock.Resume();
         }
 
-      
+        //protected void UserControl_ButtonClick(object sender, EventArgs e)
+        //{
+        //    //handle the event 
+        //}
 
     }
 }

@@ -36,7 +36,7 @@
             // 
             // btn_Start
             // 
-            this.btn_Start.Location = new System.Drawing.Point(70, 304);
+            this.btn_Start.Location = new System.Drawing.Point(30, 190);
             this.btn_Start.Name = "btn_Start";
             this.btn_Start.Size = new System.Drawing.Size(75, 23);
             this.btn_Start.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // btn_Stop
             // 
-            this.btn_Stop.Location = new System.Drawing.Point(173, 304);
+            this.btn_Stop.Location = new System.Drawing.Point(133, 190);
             this.btn_Stop.Name = "btn_Stop";
             this.btn_Stop.Size = new System.Drawing.Size(75, 23);
             this.btn_Stop.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // btn_Pause
             // 
-            this.btn_Pause.Location = new System.Drawing.Point(271, 304);
+            this.btn_Pause.Location = new System.Drawing.Point(231, 190);
             this.btn_Pause.Name = "btn_Pause";
             this.btn_Pause.Size = new System.Drawing.Size(75, 23);
             this.btn_Pause.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // btn_Resume
             // 
-            this.btn_Resume.Location = new System.Drawing.Point(374, 304);
+            this.btn_Resume.Location = new System.Drawing.Point(334, 190);
             this.btn_Resume.Name = "btn_Resume";
             this.btn_Resume.Size = new System.Drawing.Size(75, 23);
             this.btn_Resume.TabIndex = 3;
@@ -78,17 +78,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-
+            this.ClientSize = new System.Drawing.Size(434, 241);
             this.Controls.Add(this.btn_Resume);
             this.Controls.Add(this.btn_Pause);
             this.Controls.Add(this.btn_Stop);
             this.Controls.Add(this.btn_Start);
             this.Name = "Form1";
             this.Text = "Form1";
-
-            
-
             this.ResumeLayout(false);
 
         }

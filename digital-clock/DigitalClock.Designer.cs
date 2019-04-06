@@ -101,6 +101,7 @@ namespace digital_clock
             // 
             // timer
             // 
+            this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // DigitalClock
@@ -113,7 +114,7 @@ namespace digital_clock
             this.Controls.Add(this.num2);
             this.Controls.Add(this.num1);
             this.Name = "DigitalClock";
-            this.Size = new System.Drawing.Size(111, 42);
+            this.Size = new System.Drawing.Size(85, 22);
             this.Load += new System.EventHandler(this.DigitalClock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.num1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num2)).EndInit();
@@ -122,8 +123,6 @@ namespace digital_clock
             ((System.ComponentModel.ISupportInitialize)(this.num4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            
-
 
         }
 

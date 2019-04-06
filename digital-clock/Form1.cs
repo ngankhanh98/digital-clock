@@ -22,6 +22,7 @@ namespace digital_clock
             message = clock.Minute.ToString() + " - " + clock.Second.ToString();
         }
 
+
        
         private void btn_Start_Click(object sender, EventArgs e)
         {
@@ -44,5 +45,6 @@ namespace digital_clock
         }
 
       
+
     }
 }

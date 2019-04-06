@@ -32,6 +32,7 @@
             this.btn_Stop = new System.Windows.Forms.Button();
             this.btn_Pause = new System.Windows.Forms.Button();
             this.btn_Resume = new System.Windows.Forms.Button();
+            this.clock = new digital_clock.DigitalClock();
             this.SuspendLayout();
             // 
             // btn_Start
@@ -56,7 +57,7 @@
             // 
             // btn_Pause
             // 
-            this.btn_Pause.Location = new System.Drawing.Point(231, 190);
+            this.btn_Pause.Location = new System.Drawing.Point(230, 190);
             this.btn_Pause.Name = "btn_Pause";
             this.btn_Pause.Size = new System.Drawing.Size(75, 23);
             this.btn_Pause.TabIndex = 2;
@@ -74,11 +75,22 @@
             this.btn_Resume.UseVisualStyleBackColor = true;
             this.btn_Resume.Click += new System.EventHandler(this.btn_Resume_Click);
             // 
+            // clock
+            // 
+            this.clock.Location = new System.Drawing.Point(135, 78);
+            this.clock.Minute = 0;
+            this.clock.Name = "clock";
+            this.clock.Second = 0;
+            this.clock.Size = new System.Drawing.Size(170, 44);
+            this.clock.TabIndex = 4;
+            this.clock.Value = "0:0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 241);
+            this.Controls.Add(this.clock);
             this.Controls.Add(this.btn_Resume);
             this.Controls.Add(this.btn_Pause);
             this.Controls.Add(this.btn_Stop);
@@ -95,6 +107,7 @@
         private System.Windows.Forms.Button btn_Stop;
         private System.Windows.Forms.Button btn_Pause;
         private System.Windows.Forms.Button btn_Resume;
+        private DigitalClock clock;
     }
 }
 

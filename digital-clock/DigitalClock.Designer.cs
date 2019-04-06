@@ -50,8 +50,8 @@ namespace digital_clock
             this.num1.Image = global::digital_clock.Properties.Resources._0;
             this.num1.Location = new System.Drawing.Point(0, 0);
             this.num1.Name = "num1";
-            this.num1.Size = new System.Drawing.Size(17, 22);
-            this.num1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.num1.Size = new System.Drawing.Size(34, 44);
+            this.num1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.num1.TabIndex = 0;
             this.num1.TabStop = false;
             // 
@@ -59,10 +59,10 @@ namespace digital_clock
             // 
             this.num2.BackColor = System.Drawing.Color.Transparent;
             this.num2.Image = global::digital_clock.Properties.Resources._0;
-            this.num2.Location = new System.Drawing.Point(17, 0);
+            this.num2.Location = new System.Drawing.Point(33, 0);
             this.num2.Name = "num2";
-            this.num2.Size = new System.Drawing.Size(17, 22);
-            this.num2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.num2.Size = new System.Drawing.Size(34, 44);
+            this.num2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.num2.TabIndex = 1;
             this.num2.TabStop = false;
             // 
@@ -70,10 +70,10 @@ namespace digital_clock
             // 
             this.dash.BackColor = System.Drawing.Color.Transparent;
             this.dash.Image = global::digital_clock.Properties.Resources._;
-            this.dash.Location = new System.Drawing.Point(34, 0);
+            this.dash.Location = new System.Drawing.Point(65, 0);
             this.dash.Name = "dash";
-            this.dash.Size = new System.Drawing.Size(17, 22);
-            this.dash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.dash.Size = new System.Drawing.Size(34, 44);
+            this.dash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.dash.TabIndex = 2;
             this.dash.TabStop = false;
             // 
@@ -81,10 +81,10 @@ namespace digital_clock
             // 
             this.num3.BackColor = System.Drawing.Color.Transparent;
             this.num3.Image = global::digital_clock.Properties.Resources._0;
-            this.num3.Location = new System.Drawing.Point(51, 0);
+            this.num3.Location = new System.Drawing.Point(98, 0);
             this.num3.Name = "num3";
-            this.num3.Size = new System.Drawing.Size(17, 22);
-            this.num3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.num3.Size = new System.Drawing.Size(34, 44);
+            this.num3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.num3.TabIndex = 3;
             this.num3.TabStop = false;
             // 
@@ -92,10 +92,10 @@ namespace digital_clock
             // 
             this.num4.BackColor = System.Drawing.Color.Transparent;
             this.num4.Image = global::digital_clock.Properties.Resources._0;
-            this.num4.Location = new System.Drawing.Point(68, 0);
+            this.num4.Location = new System.Drawing.Point(131, 0);
             this.num4.Name = "num4";
-            this.num4.Size = new System.Drawing.Size(17, 22);
-            this.num4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.num4.Size = new System.Drawing.Size(34, 44);
+            this.num4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.num4.TabIndex = 4;
             this.num4.TabStop = false;
             // 
@@ -114,7 +114,7 @@ namespace digital_clock
             this.Controls.Add(this.num2);
             this.Controls.Add(this.num1);
             this.Name = "DigitalClock";
-            this.Size = new System.Drawing.Size(85, 22);
+            this.Size = new System.Drawing.Size(170, 44);
             this.Load += new System.EventHandler(this.DigitalClock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.num1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num2)).EndInit();
@@ -122,7 +122,6 @@ namespace digital_clock
             ((System.ComponentModel.ISupportInitialize)(this.num3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num4)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

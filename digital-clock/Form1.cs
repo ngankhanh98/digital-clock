@@ -12,19 +12,11 @@ namespace digital_clock
 {
     public partial class Form1 : Form
     {
-        string message;
-        DigitalClock clock = new DigitalClock();
         public Form1()
         {
             InitializeComponent();
-            clock.Value = "11:11";
-            this.Controls.Add(clock);
-            
-            message = clock.Minute.ToString() + " - " + clock.Second.ToString();
         }
 
-
-       
         private void btn_Start_Click(object sender, EventArgs e)
         {
             clock.Start();
@@ -44,11 +36,6 @@ namespace digital_clock
         {
             clock.Resume();
         }
-
-        //protected void UserControl_ButtonClick(object sender, EventArgs e)
-        //{
-        //    //handle the event 
-        //}
 
     }
 }
